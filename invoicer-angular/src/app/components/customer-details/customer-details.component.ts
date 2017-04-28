@@ -19,8 +19,26 @@ export class CustomerDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
-    this.customerService.getCustomer(this.id).subscribe(customer=>{
+
+    this.customerService.getCustomer(this.id).subscribe(customer => {
       this.customer = customer;
+    });
+
+    this.customerService.getInvoices(this.id).subscribe(invoices => {
+      this.invoices = invoices;
+    });
+  }
+
+  markPaid(id, invoice) {
+    invoice.status = 'paid';
+    this.customerService.markPaid(id, invoice).subscribe(invoice => {
+        invoice.status = 'paid';
+    });
+  }
+
+   onDeleteClick(id) {
+    this.customerService.deleteInvoice(id).subscribe(invoice => {
+      this.router.navigate(['/customer/'+this.id]);
     });
   }
 }
