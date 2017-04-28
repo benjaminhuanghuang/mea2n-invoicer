@@ -51,7 +51,7 @@ router.put('/:id', (req, res) => {
 
 // Delete
 router.delete('/:id', (req, res) => {
-    const id = req.param.id;
+    const id = req.params.id;
     Customer.removeCustomer(id, (err, customer) => {
         if (err) {
             console.log(err);

@@ -19,7 +19,7 @@
       <td>
         <a routerLink="/customer/{{customer._id}}" class="btn btn-success">Details</a>
         <a routerLink="/customer/edit/{{customer._id}}" class="btn btn-default">Edit</a>
-        <a href="" class="btn btn-danger">Delete</a>
+        <a href="" (click)="onDeleteClick(customer._id)" class="btn btn-danger">Delete</a>
       </td>
     </tr>
   </table>
