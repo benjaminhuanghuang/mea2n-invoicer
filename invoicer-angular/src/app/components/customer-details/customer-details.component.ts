@@ -32,13 +32,13 @@ export class CustomerDetailsComponent implements OnInit {
   markPaid(id, invoice) {
     invoice.status = 'paid';
     this.customerService.markPaid(id, invoice).subscribe(invoice => {
-        invoice.status = 'paid';
+      invoice.status = 'paid';
     });
   }
 
-   onDeleteClick(id) {
+  onDeleteClick(id) {
     this.customerService.deleteInvoice(id).subscribe(invoice => {
-      this.router.navigate(['/customer/'+this.id]);
+      this.router.navigate(['/customer/' + this.id]);
     });
   }
 }

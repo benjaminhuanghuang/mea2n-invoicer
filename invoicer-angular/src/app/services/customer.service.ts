@@ -48,7 +48,7 @@ export class CustomerService {
   }
 
   deleteInvoice(id) {
-    return this.http.delete("http://localhost:3000/api/involice/" + id).map(res => res.json());
+    return this.http.delete("http://localhost:3000/api/invoices/" + id).map(res => res.json());
   }
 
   saveInvoice(invoice) {
