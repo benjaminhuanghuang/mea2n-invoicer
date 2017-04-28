@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { CustomerService } from '../../services/customer.service';
+
 
 @Component({
   selector: 'app-add-customer',
@@ -17,13 +20,29 @@ export class AddCustomerComponent implements OnInit {
   state;
   zip;
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService, private router:Router) { }
 
   ngOnInit() {
 
   }
 
-  onAddSubmit(){
-    console.log('TEST');
+  onAddSubmit() {
+    let customer = {
+      first_name: this.first_name,
+      last_name: this.last_name,
+      company: this.company,
+      email: this.email,
+      phone: this.phone,
+      address: {
+        street: this.street,
+        city: this.city,
+        state: this.state,
+        zip: this.zip
+      }
+    }
+
+    this.customerService.saveCustomer(customer).subscribe(customer=>{
+      this.router.navigate(['/']);
+    });
   }
 }

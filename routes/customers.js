@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
 // add
 router.post('/', (req, res) => {
     const customer = req.body;
-    Customer.getCustomer(customer, (err, customer) => {
+    Customer.addCustomer(customer, (err, customer) => {
         if (err) {
             console.log(err);
             res.send(err);
