@@ -39,3 +39,9 @@
 
     bootstrap -> Getting started -> Example -> Starter template -> view page source 
     copy <nav>
+
+## Add service to read data
+      $ ng g service customer
+
+      put service into providers in app.module.ts
+        providers: [CustomerService]

@@ -12,15 +12,17 @@ import { AddInvoiceComponent } from './components/add-invoice/add-invoice.compon
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { EditCustomerComponent } from './components/edit-customer/edit-customer.component';
+import { CustomerService } from './services/customer.service';
+
 
 const appRoutes: Routes = [
   {
-    path:'', component: CustomersComponent
+    path: '', component: CustomersComponent
   },
   {
-    path:'customer/add', component: AddCustomerComponent
+    path: 'customer/add', component: AddCustomerComponent
   },
-  
+
 ]
 
 @NgModule({
@@ -39,7 +41,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
