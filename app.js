@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/client'));
 app.use(bodyParser.json());
 
 
-app.get('/', () => {
+app.get('/', (req, res) => {
     res.send('Please use /api/');
 });
 
