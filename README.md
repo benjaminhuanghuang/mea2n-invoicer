@@ -45,3 +45,7 @@
 
       put service into providers in app.module.ts
         providers: [CustomerService]
+
+## Build and deploy
+    $ ng build   # compile client side app to dist folder
+    copy content in dist to /client
