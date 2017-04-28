@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
 });
 
 // Update 
-router.post('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     const id = req.params.id;
     const invoice = req.body;
     Invoice.updateInvoice(id, invoice, {}, (err, invoices) => {
