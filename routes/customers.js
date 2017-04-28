@@ -37,8 +37,8 @@ router.post('/', (req, res) => {
 });
 
 // update
-router.post('/:id', (req, res) => {
-    const id = req.param.id;
+router.put('/:id', (req, res) => {
+    const id = req.params.id;
     const customer = req.body;
     Customer.updateCustomer(id, customer, (err, customer) => {
         if (err) {

@@ -25,6 +25,9 @@ const appRoutes: Routes = [
   {
     path: 'customer/:id', component: CustomerDetailsComponent
   },
+  {
+    path: 'customer/edit/:id', component: EditCustomerComponent
+  },
 ]
 
 @NgModule({
