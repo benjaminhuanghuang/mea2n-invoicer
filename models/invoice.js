@@ -45,7 +45,7 @@ module.exports.getCustomerInvoices = (customer_id, callback, limit) => {
 }
 
 // Add invoice
-module.exports.addCustomer = (invoice, callback) => {
+module.exports.addInvoice= (invoice, callback) => {
     const add = {
         customer: invoice.customer,
         service: invoice.service,

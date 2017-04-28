@@ -24,7 +24,7 @@ router.get('/customer/:customer_id', (req, res) => {
 });
 
 // Add 
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
     const invoice = req.body;
     Invoice.addInvoice(invoice, (err, invoices)=>{
         if(err){
