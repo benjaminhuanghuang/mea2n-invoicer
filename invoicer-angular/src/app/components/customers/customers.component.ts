@@ -7,12 +7,15 @@ import { CustomerService } from '../../services/customer.service';
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
+  customers;
 
   constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
     this.customerService.getCustomers().subscribe(customers =>{
       console.log(customers);
+      this.customers = customers;
+      
     });
   }
 
