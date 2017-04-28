@@ -37,7 +37,7 @@ module.exports.getInvoiceById = (id, callback) => {
 }
 
 // Get customer invoice
-module.exports.getCustomerInvoices = (customer_id, callback) => {
+module.exports.getCustomerInvoices = (customer_id, callback, limit) => {
     const query = {
         customer: customer_id
     }
