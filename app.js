@@ -16,6 +16,14 @@ app.get('/', (req, res) => {
     res.send('Please use /api/');
 });
 
+// Routes
+const customers = require('./routes/customers');
+const invoices = require('./routes/invoices');
+
+// Path
+app.use('/api/customers', customers); 
+app.use('/api/invoices', invoices); 
+
 
 app.listen(port, () => {
     console.log('Server started on Port ' + port);
