@@ -12,9 +12,6 @@ const customerSchema = mongoose.Schema({
     company: {
         type: String
     },
-    logo_url: {
-        type: String
-    },
     email: {
         type: String,
         required: true
@@ -52,7 +49,6 @@ module.exports.addCustomer = (customer, callback) => {
         first_name: customer.first_name,
         last_name: customer.last_name,
         company: customer.company,
-        logo_url: customer.logo_url,
         email: customer.email,
         phone: customer.phone,
         address: {
@@ -67,7 +63,7 @@ module.exports.addCustomer = (customer, callback) => {
 }
 
 // Update customer
-module.exports.addCustomer = (id, customer, options, callback) => {
+module.exports.updateCustomer = (id, customer, options, callback) => {
     const query = {
         _id: id
     }
@@ -75,7 +71,6 @@ module.exports.addCustomer = (id, customer, options, callback) => {
         first_name: customer.first_name,
         last_name: customer.last_name,
         company: customer.company,
-        logo_url: customer.logo_url,
         email: customer.email,
         phone: customer.phone,
         address: {
