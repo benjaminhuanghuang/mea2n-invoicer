@@ -22,7 +22,9 @@ const appRoutes: Routes = [
   {
     path: 'customer/add', component: AddCustomerComponent
   },
-
+  {
+    path: 'customer/:id', component: CustomerDetailsComponent
+  },
 ]
 
 @NgModule({

@@ -19,4 +19,8 @@ export class CustomerService {
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/api/customers', customer, { headers: headers }).map(res => res.json());
   }
+
+  getCustomer(id) {
+    return this.http.get("http://localhost:3000/api/customers/" + id).map(res => res.json());
+  }
 }
