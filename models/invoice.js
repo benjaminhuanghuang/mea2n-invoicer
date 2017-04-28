@@ -28,7 +28,7 @@ const Invoice = module.exports = mongoose.model('Invoice', invoiceSchema);
 
 // Get invoices
 module.exports.getInvoices = (callback, limit) => {
-    Invoice.find(callback).limit(limit).sort(['created_at', 'ascending']);
+    Invoice.find(callback).limit(limit).sort([['created_at', 'ascending']]);
 }
 
 // Get invoice
@@ -41,7 +41,7 @@ module.exports.getCustomerInvoices = (customer_id, callback) => {
     const query = {
         customer: customer_id
     }
-    Invoice.find(query, callback).limit(limit).sort(['created_at', 'ascending']);
+    Invoice.find(query, callback).limit(limit).sort([['created_at', 'ascending']]);
 }
 
 // Add invoice

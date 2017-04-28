@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/invoicer')
+const db = mongoose.connection;
 
 const app = express();
 const port = 3000;
