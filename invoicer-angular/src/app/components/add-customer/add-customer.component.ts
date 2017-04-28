@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerService } from '../../services/customer.service';
 
 @Component({
   selector: 'app-add-customer',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-customer.component.css']
 })
 export class AddCustomerComponent implements OnInit {
+  first_name;
+  last_name;
+  company;
+  email;
+  phone;
+  street;
+  city;
+  state;
+  zip;
 
-  constructor() { }
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
+
   }
 
+  onAddSubmit(){
+    console.log('TEST');
+  }
 }
